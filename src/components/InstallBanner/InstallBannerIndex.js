@@ -10,7 +10,7 @@ const InstallBanner = (props) => {
   }
   const onClickInstall = () => {
     props.onClick();
-    //setInstallBannerDisplay(false);
+    setInstallBannerDisplay(false);
   }
 
   return (
@@ -19,7 +19,7 @@ const InstallBanner = (props) => {
         props.display && (
           <BigContainer display={installBannerDisplay}>
             < InstallBannerContainer >
-              {/* <InstallBannerIcon src={logo} /> */}
+              <InstallBannerIcon src={logo} />
               <InstallBannerText>{props.text}</InstallBannerText>
               <InstallBannerButton onClick={onClickInstall}>{props.buttonText}</InstallBannerButton>
               <InstallBannerAntiActionButton onClick={onClickClose}>{props.noActionButtonText}</InstallBannerAntiActionButton>

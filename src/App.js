@@ -16,6 +16,14 @@ function App() {
 
   useEffect(() => {
     console.log("deferredPrompt", deferredPrompt)
+    if (deferredPrompt) {
+      setInstallPrompt(true)
+      console.log("prompt set to true")
+    }
+    else {
+      setInstallPrompt(false)
+      console.log("prompt set to false")
+    }
   }, [deferredPrompt])
 
   const onInstallClick = () => {
@@ -27,9 +35,8 @@ function App() {
   }
   return (
     <>
-      <InstallBanner display={true} onClick={onInstallClick} buttonText={"Install"} noActionButtonText={"Not now"} text={"Access your guide anywhere, anytime."} />
+      <InstallBanner display={deferredPrompt} onClick={onInstallClick} buttonText={"Install"} noActionButtonText={"Not now"} text={"Access your guide anywhere, anytime."} />
       <Homepage />
-
     </>
   );
 }
